@@ -3,6 +3,8 @@ namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
 use RocketTheme\Toolbox\Event\Event;
+use Symfony\Component\Yaml\Yaml;
+
 
 class myfunction extends Plugin
 {
@@ -25,16 +27,25 @@ foreach($data as $val){
     if(!is_array($val)){
       $x=0;
       $myvar[$x]=$val;
+      $x++;
     }
 }
 
-$this->grav['log']->info('huda test5: '.$myvar[0]); //$form["data"]
+//$this->grav['log']->info('huda test5: '.$myvar[0]); //$form["data"]
 //$this->grav['log']->info('huda test4: '.var_dump(json_decode($form["data"])));
 
+
+//$this->grav['log']->info('huda test6 '.getcwd());
+
+//$value = Yaml::parseFile('user/accounts/testuser.yaml');
+//$this->grav['log']->info('huda test6 '.$value["fullname"]);
+
+
+
         switch ($action) {
-            case 'yourAction':
-                //do what you want
-//$Grav['log']->info('huda test');
+            case 'tenantComplaintForm':
+              //get current user and add to email
+              //get address unit associated to user
         }
     }
 }
