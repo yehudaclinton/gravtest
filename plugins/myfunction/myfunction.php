@@ -23,8 +23,8 @@ class myfunction extends Plugin
         $params = $event['params'];
 
 //$data = $action->toArray();
-print_r($form->data);
-//$data = $form->data->toArray();
+$data = $form->data->toArray();
+print_r($data);
 //$name = $form->data['name'];
 //$this->grav['log']->info('huda test7: '.$name); //$form["data"]
 
