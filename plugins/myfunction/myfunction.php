@@ -22,17 +22,11 @@ class myfunction extends Plugin
         $action = $event['action'];
         $params = $event['params'];
 
-$data = json_decode( json_encode($form["data"]), true);
-foreach($data as $val){
-    if(!is_array($val)){
-      $x=0;
-      $myvar[$x]=$val;
-      $x++;
-    }
-}
-
-//$this->grav['log']->info('huda test5: '.$myvar[0]); //$form["data"]
-//$this->grav['log']->info('huda test4: '.var_dump(json_decode($form["data"])));
+//$data = $action->toArray();
+print_r($form->data);
+//$data = $form->data->toArray();
+//$name = $form->data['name'];
+//$this->grav['log']->info('huda test7: '.$name); //$form["data"]
 
 
 //$this->grav['log']->info('huda test6 '.getcwd());
