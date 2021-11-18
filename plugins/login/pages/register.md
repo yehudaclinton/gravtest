@@ -19,6 +19,9 @@ form:
         message: PLUGIN_LOGIN.USERNAME_NOT_VALID
         config-pattern@: system.username_regex
 
+    address:
+      type: text
+
     email:
       type: email
       validate:

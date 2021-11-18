@@ -1,0 +1,32 @@
+name: Podcast
+version: 3.0.4
+description: Creates Podcast page types and related podcast RSS feeds
+icon: microphone
+author:
+  name: Jeremy Gonyea
+  email: jeremy.gonyea@gmail.com
+homepage: https://github.com/jgonyea/grav-plugin-podcast
+keywords: grav, plugin, podcast, music
+bugs: https://github.com/jgonyea/grav-plugin-podcast/issues
+docs: https://github.com/jgonyea/grav-plugin-podcast/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - admin
+  - breadcrumbs
+  - feed
+  - get-id3
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

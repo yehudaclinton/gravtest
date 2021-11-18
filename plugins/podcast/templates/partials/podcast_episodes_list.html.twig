@@ -1,0 +1,53 @@
+<div class = "podcast-full-list">
+    {% if (episodes|length > 0)%}
+    <h2>{{ 'PLUGIN_PODCAST.WORDS.LATEST'|t|e }} {{ 'PLUGIN_PODCAST.WORDS.EPISODE'|t|e|pluralize }}</h2>
+
+    <div class="channel-links">
+        <a href="{{ base_url }}{{ page.route }}.rss">RSS <i class="fa fa-rss" aria-hidden="true"></i> | {{ page.title }}</a>
+    </div>
+
+    <ul>
+        {% for e in episodes %}
+            {# Datestamp Fallback Calculation (Published date field -> General date field -> File modified metadata) #}
+            {% if (e.header.publish_date) %}
+                {% set datestamp = e.header.publish_date %}
+            {% elseif (e.header.date) %}
+                {% set datestamp = e.header.date %}
+            {% else %}
+                {% set datestamp = e.modified %}
+            {% endif %}
+
+            <li>
+                <a href ="{{ e.url }}">
+                    {% if (e.header.podcast.itunes.image) %}
+                        {{ e.media[e.header.podcast.itunes.image].zoomCrop(200, 200).html(e.header.podcast.itunes.image,'','podcast-content-image')|raw }}
+                    {% else %}
+                            <img src="{{ url("plugin://podcast/assets/images/default.jpg") }}" class="podcast-content-image" />
+                    {% endif %}
+                    <h3>{{ e.title }}
+                        {% if (e.header.podcast.audio.meta.duration) %}
+                            <small>( {{ e.header.podcast.audio.meta.duration }} )</small>
+                        {% endif %}
+                    </h2>
+                </a>
+                <p class="episode-date">
+                    {{ (datestamp)|nicetime(false) }}{% if e.header.podcast.audio.meta %} | <a href ="{{ e.header.podcast.audio.meta.guid }}">Download Audio</a>{% endif %}
+                </p>
+                <p class="episode-description">
+                    {% if e.summary %}
+                        {{ (e.summary)|striptags|truncate(300)|raw }}
+                    {% else %}
+                        {{ 'PLUGIN_PODCAST.EPISODE_CONTENT.EMPTY'|t|e }}
+                    {% endif %}
+                </p>
+                {% if (e.parent.template == 'podcast-series') %}
+                <p><a href="{{ e.parent.url }}">{{ 'PLUGIN_PODCAST.WORDS.SERIES'|t|e }} | {{ e.parent.title}}</a> </p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> No episodes </p>
+    {% endif %}
+
+</div>

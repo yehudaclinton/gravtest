@@ -1,0 +1,33 @@
+<?php
+namespace Grav\Plugin;
+
+use Grav\Common\Plugin;
+use RocketTheme\Toolbox\Event\Event;
+
+class myfunction extends Plugin
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            'onFormProcessed' => ['onFormProcessed', 0]
+        ];
+    }
+
+
+    public function onFormProcessed(Event $event)
+    {
+        $form = $event['form'];
+        $action = $event['action'];
+        $params = $event['params'];
+
+$this->grav['log']->info('huda test2: '.$form["Name"]);//email
+
+//$this->grav['log']->info('huda test3: '.var_dump(json_decode($action)));
+
+        switch ($action) {
+            case 'yourAction':
+                //do what you want
+//$Grav['log']->info('huda test');
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<div class = "podcast-full-list">
+    {% if (series|length > 0)%}
+    <h2>{{ 'PLUGIN_PODCAST.WORDS.LATEST'|t|e }} {{ 'PLUGIN_PODCAST.WORDS.SERIES'|t|e|pluralize }}</h2>
+    
+    <div class="channel-links">
+        All Series
+    </div>
+
+    <ul>
+        {% for s in series %}
+            <li>
+                <a href ="{{ s.url }}">
+                    {% if (s.header.series.image) %}
+                        {{ s.media[s.header.series.image].zoomCrop(200, 200).html(s.header.series.image,'','podcast-content-image')|raw }}
+                    {% endif %}
+                    <h3>{{ s.title }}
+                        {% if (s.header.podcast.audio.meta.duration) %}
+                            <small>( {{ s.header.podcast.audio.meta.duration }} )</small>
+                        {% endif %}
+                    </h2>
+                </a>
+                <p class="series-description">
+                    {% if s.summary %}
+                        {{ (s.summary)|striptags|truncate(100)|raw }}
+                    {% else %}
+                        {{ 'PLUGIN_PODCAST.EPISODE_CONTENT.EMPTY'|t|e }}
+                    {% endif %}
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> No episodes </p>
+    {% endif %}
+
+</div>
