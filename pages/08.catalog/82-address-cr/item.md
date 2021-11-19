@@ -13,6 +13,10 @@ honeypot: ''
 header_image: '0'
 feed:
     limit: 10
+show_breadcrumbs: false
+show_pagination: false
+summary:
+    enabled: '0'
 ---
 
 some details
