@@ -7,3 +7,8 @@ add a field to login plugin settings
 add the field to user/plugins/login/pages/register.md
 add field to system/blueprints/user/account.yaml
 TODO proper languages
+
+## How to keep plugin customizations through an update
+Changes made in the plugin options in the Admin panel will be saved to the configuration file in that location.
+otherwise
+Copy the add-page-by-form.yaml default file to your user/config/plugins folder and use that copy to change configuration settings.
