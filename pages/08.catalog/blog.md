@@ -11,6 +11,8 @@ content:
     url_taxonomy_filters: true
 feed:
     limit: 10
+show_breadcrumbs: false
+show_pagination: false
 ---
 
 # Units available

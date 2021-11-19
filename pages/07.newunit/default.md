@@ -4,11 +4,10 @@ title: 'Submit new listing'
 template: form
 visible: true
 pageconfig:
-    parent: /submitted-units/drafts
+    parent: /catalog
 pagefrontmatter:
     visible: true
-    status: draft
-    template: default
+    template: item
 
 form:
     name: newunit
