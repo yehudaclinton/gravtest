@@ -10,6 +10,9 @@ attachments:
 name: 'there shouldnt be a name here'
 title: '82 address cr'
 honeypot: ''
+header_image: '0'
+feed:
+    limit: 10
 ---
 
 some details
