@@ -8,6 +8,11 @@ add the field to user/plugins/login/pages/register.md
 add field to system/blueprints/user/account.yaml
 TODO proper languages
 
+## How to add stuff like pictures on newunit update
+after add it after
+honeypot: ''
+---
+
 ## How to keep plugin customizations through an update
 Changes made in the plugin options in the Admin panel will be saved to the configuration file in that location.
 
