@@ -8,6 +8,8 @@ add the field to user/plugins/login/pages/register.md
 add field to system/blueprints/user/account.yaml
 TODO proper languages
 
+TODO: fix the double hero image in catalog
+
 ## How to add stuff like pictures on newunit update
 after add it after
 honeypot: ''
