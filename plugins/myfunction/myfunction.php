@@ -27,7 +27,6 @@ class myfunction extends Plugin
 //print_r($form);
 
 $name = $form->data['title'];
-$picture = $form->data['attachments'];
 //$this->grav['log']->info('huda test8: '.$action); //$form["data"]
 
 
@@ -40,17 +39,18 @@ $picture = $form->data['attachments'];
 
         switch ($action) {
             case 'addpage':
-              $this->grav['log']->info('huda test8: '.$name);
-
-//honeypot: ''\n---
+//              $this->grav['log']->info('huda test8: '.$name);
 
 $path = str_replace(' ', '-', strtolower($name));
-$path = 'user/pages/08.catalog/'.$path;
+//$pictures = scandir('user/pages/08.catalog/'.$path);
+$pictures = $form->data['attachments'];
+$path = 'user/pages/08.catalog/'.$path.'/item.md';
+$this->grav['log']->info('huda test9: '.$pictures);
 $content = file_get_contents($path);
-$this->grav['log']->info('huda test8: '.$content);
-$newcontnent = str_replace("honeypot: ''\n---", "honeypot: ''\n---\n".$picture);
+//$this->grav['log']->info('huda test8: '.$content);
+$newcontnent = str_replace("honeypot: ''\n---", "honeypot: ''\n---\n![alt](".$pictures.")\n", $content);
 $outcome = file_put_contents($path, $newcontnent);
-$this->grav['log']->info('huda test8: success:'.$outcome);
+//$this->grav['log']->info('huda test8: success:'.$outcome);
         }
     }
 }

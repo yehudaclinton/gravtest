@@ -1,11 +1,10 @@
 ---
 visible: true
-status: draft
 username: ''
-name: third
-title: 3test
+name: yehuda
+title: '4 house rd'
 honeypot: ''
 attachments: {  }
 ---
 
-stuffffffff
+im obsessed with programming
