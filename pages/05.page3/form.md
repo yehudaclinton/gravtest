@@ -19,6 +19,15 @@ form:
             type: email
             validate:
                 required: true
+        -
+            name: attachments
+            label: 'Attachment (images only)'
+            type: file
+            multiple: true
+            accept:
+                - 'image/*'
+            validate:
+                required: false
     buttons:
         -
             type: submit
