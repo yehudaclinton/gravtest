@@ -26,8 +26,7 @@ class myfunction extends Plugin
 //$data = $form->data->toArray();
 //print_r($form);
 
-$name = $form->data['title'];
-//$this->grav['log']->info('huda test8: '.$action); //$form["data"]
+//$this->grav['log']->info('huda test8: '.$action); //form["data"]]
 
 
 //$this->grav['log']->info('huda test6 '.getcwd());
@@ -35,20 +34,24 @@ $name = $form->data['title'];
 //$value = Yaml::parseFile('user/accounts/testuser.yaml');
 //$this->grav['log']->info('huda test6 '.$value["fullname"]);
 
-
+//$stuff = getFilesByField('attachments');
+//$this->grav['log']->info('huda test0 '.print_r($stuff));
 
         switch ($action) {
+            case 'form1':
+$data = $form->data->toArray();
+//$this->grav['log']->info('huda test00 '.print_r($data));
             case 'addpage':
 //              $this->grav['log']->info('huda test8: '.$name);
+$name = $form->data['title'];
 
 $path = str_replace(' ', '-', strtolower($name));
-//$pictures = scandir('user/pages/08.catalog/'.$path);
-$pictures = $form->data['attachments'];
 $path = 'user/pages/08.catalog/'.$path.'/item.md';
-$this->grav['log']->info('huda test9: '.$pictures);
 $content = file_get_contents($path);
 //$this->grav['log']->info('huda test8: '.$content);
-$newcontnent = str_replace("honeypot: ''\n---", "honeypot: ''\n---\n![alt](".$pictures.")\n", $content);
+$arr = preg_split("/\s+/", $content);
+$picture = $arr[8];
+$newcontnent = str_replace("honeypot: ''\n---", "honeypot: ''\n---\n![alt](".$picture.")\n", $content);
 $outcome = file_put_contents($path, $newcontnent);
 //$this->grav['log']->info('huda test8: success:'.$outcome);
         }
