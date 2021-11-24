@@ -13,6 +13,7 @@ feed:
     limit: 10
 show_breadcrumbs: false
 show_pagination: false
+hero_classes: overlay-dark-gradient
 ---
 
 # Units available
