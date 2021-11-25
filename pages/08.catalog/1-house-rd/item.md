@@ -10,6 +10,10 @@ attachments:
 name: yehuda
 title: '1 house rd'
 honeypot: ''
+feed:
+    limit: 10
 ---
 
 misc
+
+more stuff
