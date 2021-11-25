@@ -8,7 +8,6 @@ pageconfig:
 pagefrontmatter:
     visible: true
     template: item
-
 form:
     name: newunit
     fields:
@@ -20,7 +19,7 @@ form:
                 required: true
         -
             name: title
-            label: Title
+            label: 'Title (Address)'
             type: text
             validate:
                 required: true
