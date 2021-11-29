@@ -1,4 +1,4 @@
 ---
-title: 'user registration'
+title: 'user register'
 ---
 
