@@ -21,5 +21,5 @@ Changes made in the plugin options in the Admin panel will be saved to the confi
 If there are no options try this
 Copy the add-page-by-form.yaml default file to your user/config/plugins folder and use that copy to change configuration settings.
 
-## Huge dev refference
+## Huge dev reference
 https://learn.getgrav.org/17/api#class-grav-common-data-data
