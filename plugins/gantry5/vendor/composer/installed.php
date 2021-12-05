@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '5.5.5',
-        'version' => '5.5.5.0',
+        'pretty_version' => '5.5.6',
+        'version' => '5.5.6.0',
         'type' => 'grav-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2b69fd0145cd953428564d76254a84cd88b7472f',
+        'reference' => '45e7746a67c9fbc675a67dba4a0531d2b10937cf',
         'name' => 'rockettheme/gantry5',
         'dev' => false,
     ),
     'versions' => array(
         'rockettheme/gantry5' => array(
-            'pretty_version' => '5.5.5',
-            'version' => '5.5.5.0',
+            'pretty_version' => '5.5.6',
+            'version' => '5.5.6.0',
             'type' => 'grav-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2b69fd0145cd953428564d76254a84cd88b7472f',
+            'reference' => '45e7746a67c9fbc675a67dba4a0531d2b10937cf',
             'dev_requirement' => false,
         ),
         'scssphp/scssphp' => array(
