@@ -1,5 +1,8 @@
 ---
 title: notes
+process:
+    markdown: true
+    twig: true
 ---
 
 twig stuff {{ example() }} after
