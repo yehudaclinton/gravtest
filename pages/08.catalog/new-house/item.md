@@ -10,7 +10,14 @@ attachments:
 name: yehuda
 title: 'new house'
 honeypot: ''
+process:
+    markdown: true
+    twig: true
+twig_first: true
+feed:
+    limit: 10
 ---
+
 ![alt](IMG_20151012_141228.jpg)
 
 
