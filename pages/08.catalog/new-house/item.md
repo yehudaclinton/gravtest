@@ -18,6 +18,8 @@ feed:
     limit: 10
 ---
 
+{% set content = page.content|slice(page.summary|length) %}
+{{ content|raw }}
 ![alt](IMG_20151012_141228.jpg)
 
 
